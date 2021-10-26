@@ -1,4 +1,4 @@
-import {FAIL_PROFILE,LOADPROFILE,GETPROFILE,EDITPROFILE} from '../types/types'
+import {FAIL_PROFILE,LOADPROFILE,GETPROFILE} from '../types/types'
 const initState ={
     profile:null,
     loadProfile:false
@@ -17,8 +17,7 @@ switch (action.type) {
     case FAIL_PROFILE: 
         return {...state,errors:action.payload.errors,loadProfile:false}
     
-    // case  EDITPROFILE: 
-    // return {...state,profile:action.payload,loadProfile:false}
+   
 
     default:
         return state

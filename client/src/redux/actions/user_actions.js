@@ -12,14 +12,14 @@ export const register=(user,history)=>async (dispatch)=>{
 
       const res =await axios.post('/api/Users/SignUp',user)  
       dispatch({type:REGISTER,payload:res.data})
-      history.push('/Profile')
+      history.push('/AddProfile')
 
     } catch (error) {
         dispatch({type:FAIL_USER,payload:error.response.data})
         
     }
 
-}
+} 
 
 //Sign In
 export const login=(user,history)=>async (dispatch)=>{

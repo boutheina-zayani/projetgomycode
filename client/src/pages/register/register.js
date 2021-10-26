@@ -31,7 +31,7 @@ function Register(){
           <input type="password" id="lname" name="password" className="lname" placeholder="كلمة السر" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 
           <button
-           onClick={()=>dispatch(register({firstname,lastname,email,password},history))}>
+           onClick={()=>dispatch(register({firstname,lastname,email,password},history))} style={{width:"400px"}}>
               تسجيــــل</button>
 
         </div>

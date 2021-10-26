@@ -1,31 +1,15 @@
  import './profile.css'
  import { useSelector,useDispatch} from "react-redux"
  import {Spinner} from "react-bootstrap"
- import {useEffect} from "react"
-import { current } from '../../redux/actions/user_actions'
-import { getProfile,editProfile } from '../../redux/actions/profile_actions'
+import { editProfile } from '../../redux/actions/profile_actions'
 import {useState} from "react"
-// import {useHistory} from "react-router-dom"
+ import {useHistory} from "react-router-dom"
  
 function Profile (){
-  // const history=useHistory();
-  const user = useSelector (state=>state.userReducer.user)
-  const load = useSelector(state=>state.userReducer.load)
-
-  const dispatch= useDispatch()
-  useEffect(()=>{
-
-
-
-    // dispatch(current())
-    dispatch(getProfile())
-},[])
-  
   const profile = useSelector (state=>state.profileReducer.profile)
   const loadProfile = useSelector(state=>state.profileReducer.loadProfile)
-console.log(profile)
-
-
+  const dispatch= useDispatch()
+ 
   const [firstname,setfirstname]=useState(profile && profile.userId && profile.userId.firstname)
   const [lastname,setlastname]=useState(profile && profile.userId && profile.userId.lastname)
   const [email,setemail]=useState(profile && profile.userId && profile.userId.email)
@@ -33,11 +17,6 @@ console.log(profile)
   const [section,setsection]=useState(profile && profile.section)
   const [school,setschool]=useState(profile && profile.school)
   
- 
-
-
-
-
   return (
 
       <div className="overlay">
@@ -129,12 +108,11 @@ console.log(profile)
                             <div className="row gutters">
                               <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div className="text-right">
-                                  <button type="button" id="submit" name="submit" className="btn btn-secondary">الغــاء</button>
-                                  <button type="button" id="submit" name="submit" className="btn btn-primary"
-                                  // onClick={()=>{dispatch(editProfile({firstname,lastname,email,mobile,section,school}));history.push('/Home')}}
-                                  
-                                  // onClick={()=>dispatch(editProfile({firstname,lastname,email,mobile,section,school}))}
+                                    <button type="button" id="submit" name="submit" className="btn btn-primary"
+                                 onClick={()=>dispatch(editProfile({firstname,lastname,email,mobile,section,school}))}
                                   >تعديل</button>
+                                   <button type="button" id="submit" name="submit" className="btn btn-secondary">الغــاء</button>
+                               
                                 </div>
                               </div>
                             </div>

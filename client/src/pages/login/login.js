@@ -27,8 +27,8 @@ function Login(){
           <input type="text" id="lname" name="email" className="lname" placeholder="البريد الالكتروني"  value={email} onChange={(e)=>setEmail(e.target.value)}/>
           
           <input type="password" id="lname" name="password" className="lname" placeholder="كلمة السر" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-          <button onClick={()=>dispatch(login({email,password},history))}> دخـــول</button>
-          <button> هل نسيت كلمة السر ؟</button>
+          <button onClick={()=>dispatch(login({email,password},history))} style={{width:"400px"}}> دخـــول</button>
+        
         </form>
         </div>
   
